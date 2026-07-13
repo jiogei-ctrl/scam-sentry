@@ -1,0 +1,10 @@
+{
+  "name": "scam-sentry",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node --check src/shared/scorer.js && node --check src/content/content.js && node --check src/background/service-worker.js"
+  }
+}
