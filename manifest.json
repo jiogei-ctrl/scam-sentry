@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "ScamSentry",
+  "version": "0.1.0",
+  "description": "Explainable, privacy-first warnings before risky online actions.",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_title": "ScamSentry",
+    "default_popup": "src/popup/popup.html"
+  },
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["src/content/content.js"],
+      "css": ["src/content/banner.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
